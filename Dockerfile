@@ -8,7 +8,8 @@ RUN yum install -y kubectl
 ENV RKE_LATEST_VERSION="v0.1.13"
 
 RUN curl -L https://github.com/rancher/rke/releases/download/${RKE_LATEST_VERSION}/rke_linux-amd64 -o /usr/bin/rke_linux-amd64 \
-&& chmod +x /usr/bin/rke_linux-amd64
+&& chmod +x /usr/bin/rke_linux-amd64 \
+&& mv /usr/bin/rke_linux-amd64 /usr/bin/rke
 
 ENV HELM_LATEST_VERSION="v2.12.0"
 
