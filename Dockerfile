@@ -20,4 +20,7 @@ RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-${HELM_LATEST_VE
 && rm -rf ~/linux-amd64 \
 && rm -rf ~/helm-linux-amd64.tar.gz
 
+RUN mkdir /working
+WORKDIR /working
+ENTRYPOINT [ "/bin/sh" ]
 
